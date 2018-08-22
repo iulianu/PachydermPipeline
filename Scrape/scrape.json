@@ -1,0 +1,17 @@
+{
+  "pipeline": {
+    "name": "scrape"
+  },
+  "transform": {
+    "image": "localhost:5000/scrape",
+    "cmd": [
+      "java", "--add-modules", "jdk.incubator.httpclient", "-jar", "/scrape.jar", "/pfs/urls", "/pfs/out"
+    ]
+  },
+  "input": {
+    "atom": {
+      "repo": "urls",
+      "glob": "/*"
+    }
+  }
+}

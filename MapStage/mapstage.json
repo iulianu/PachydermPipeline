@@ -1,0 +1,17 @@
+{
+  "pipeline": {
+    "name": "mapstage"
+  },
+  "transform": {
+    "image": "localhost:5000/mapstage:2",
+    "cmd": [
+      "java", "--add-modules", "jdk.incubator.httpclient", "-jar", "/mapstage.jar", "/pfs/scrape", "/pfs/out"
+    ]
+  },
+  "input": {
+    "atom": {
+      "repo": "scrape",
+      "glob": "/*"
+    }
+  }
+}
